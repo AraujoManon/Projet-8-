@@ -1,4 +1,5 @@
 
+import banner from "../../images/banner.png";
 const Home = () => {
     return (
     <div className="home">
