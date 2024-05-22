@@ -1,0 +1,126 @@
+@use "../sass/variable_mixin/mixins.scss" as mixins;
+@use "../sass/variable_mixin/variables.scss" as variables;
+.location {
+  margin: 0px 100px;
+
+  .containerInfos {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .firstInfos {
+    display: flex;
+    flex-direction: column;
+  }
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 415px;
+    border-radius: 25px;
+  }
+  .carrousel {
+    position: relative;
+    .arrow {
+      position: absolute;
+      border: none;
+      background-color: transparent;
+      top: 45%;
+    }
+    .arrow.left {
+      left: -10px;
+    }
+    .arrow.right {
+      right: -10px;
+    }
+  }
+
+  h2 {
+    @include mixins.montserrat-style(500);
+    color: variables.$saumon;
+    font-size: 36px;
+    margin: 30px 0px 0px 0px;
+  }
+  p {
+    @include mixins.montserrat-style(500);
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 142.6%;
+  }
+  .tags {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+  button {
+    padding: 3px 30px;
+    height: 25px;
+    background: variables.$saumon;
+    @include mixins.montserrat-style(700);
+    font-size: 14px;
+    border-radius: 10px;
+    border: 0px solid;
+    color: white;
+  }
+  .host {
+    flex-direction: row;
+    display: flex;
+    margin: 24px 0px 21px 0px;
+    align-items: center;
+  }
+
+  h3 {
+    @include mixins.montserrat-style(700);
+    color: variables.$saumon;
+    width: 93px;
+    margin: 0px;
+  }
+
+  .pictureHost {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+  }
+  .dropdownContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 76px;
+  }
+  .dropdown {
+    width: 582px;
+  }
+  .dropdownHeader {
+    border-radius: 10px;
+    display: flex;
+    padding: 10px 20px 10px 10px;
+    background: var(--Red, #ff6060);
+    justify-content: space-between;
+    align-items: center;
+    @include mixins.montserrat-style(700);
+    color: white;
+    font-size: 18px;
+  }
+
+  .dropdownHeader .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .dropdownHeader .arrow.open {
+    transform: rotate(-180deg);
+  }
+
+  .dropdownContent {
+    @include mixins.montserrat-style(400);
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+
+  .equipmentList {
+    padding: 0px;
+    list-style-type: none;
+    margin: 0px;
+  }
+}

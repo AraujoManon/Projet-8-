@@ -1,4 +1,4 @@
-@use "../sass/variable/mixin.scss" as mixins;
+@use "../sass/variable_mixin/mixins.scss" as mixins;
 
 .header {
   @include mixins.montserrat-style(500);
@@ -23,5 +23,10 @@
     &.underline {
       text-decoration: underline;
     }
+  }
+
+  .logoKaza {
+    width: 210.322px;
+    height: 68px;
   }
 }

@@ -1,0 +1,20 @@
+.footer {
+  background-color: black;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+  .logo {
+    margin: 66px 0px 28px 0px;
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+  }
+  p {
+    color: white;
+    margin-bottom: 29px;
+  }
+}
