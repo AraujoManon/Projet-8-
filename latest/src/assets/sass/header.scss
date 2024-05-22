@@ -5,16 +5,25 @@
   display: flex;
   justify-content: space-between;
   margin: 45px 100px;
+  @media (max-width: 768px) {
+    margin: 20px 20px 27px 20px; 
+  }
 
   .logoKaza {
     width: 210.322px;
     height: 68px;
+    @media (max-width: 768px) {
+      width: 145px;
+    }
   }
 
   .nav {
     display: flex;
     flex-direction: row;
-    gap: 57px;
+    gap: 57px; 
+    @media (max-width: 768px) {
+     gap: 26px;
+    }
   }
 
   a {
@@ -22,11 +31,12 @@
     color: black;
     &.underline {
       text-decoration: underline;
+    }@media (max-width: 768px) {
+      font-size: 12px;
+      text-transform: uppercase;
     }
+   
   }
 
-  .logoKaza {
-    width: 210.322px;
-    height: 68px;
-  }
+ 
 }

@@ -1,0 +1,61 @@
+@use "../sass/variable_mixin/mixins.scss" as mixins;
+@use "../sass/variable_mixin/variables.scss" as variables;
+
+.notFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 139px;
+  @media (max-width: 768px) {
+    margin-top: 113px;
+  }
+  h1 {
+    font-size: 288px;
+    @include mixins.montserrat-style(700);
+    color: variables.$saumon;
+    margin-bottom: 139px;
+    margin-top: 0px;
+    @media (max-width: 1024px) {
+      font-size: 200px;
+    }
+    @media (max-width: 768px) {
+      font-size: 150px;
+      margin-bottom: 113px;
+    }
+    @media (max-width: 425px) {
+      font-size: 96px;
+    }
+  }
+
+  h2 {
+    margin-top: 0px;
+    font-size: 36px;
+    @include mixins.montserrat-style(500);
+    color: variables.$saumon;
+    margin-bottom: 139px;
+    @media (max-width: 1024px) {
+      font-size: 26px;
+    }
+    @media (max-width: 768px) {
+      font-size: 18px;
+      margin-bottom: 113px;
+    }
+  }
+
+  p {
+    margin-top: 0px;
+    margin-bottom: 139px;
+    @media (max-width: 768px) {
+      margin-bottom: 113px;
+    }
+  }
+  a {
+    color: variables.$saumon;
+    @include mixins.montserrat-style(500);
+    color: black;
+
+    @media (max-width: 425px) {
+      font-size: 14px;
+    }
+  }
+}

@@ -1,3 +1,7 @@
+@use "../sass/variable_mixin/mixins.scss" as mixins;
+body {
+  margin: 0px;
+}
 .footer {
   background-color: black;
   margin-top: 50px;
@@ -6,15 +10,28 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+  }
 
   .logo {
     margin: 66px 0px 28px 0px;
     display: flex;
     align-items: flex-end;
     gap: 2px;
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+    }
   }
   p {
     color: white;
     margin-bottom: 29px;
+    @include mixins.montserrat-style(500);
+    font-size: 24px;
+    @media (max-width: 768px) {
+      width: 133.594px;
+      font-size: 12px;
+      margin-bottom: 58px;
+    }
   }
 }
