@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import locations from "../../data.json";
 import Rating from '../components/StarRating.jsx';
 
@@ -10,6 +10,9 @@ const findIdLocation = (id) => {
 const Location = () => {
   const { id } = useParams();
   const location = findIdLocation(id);
+  if (!location) {
+    return <Navigate to="*" />;
+  }
   const pictures = location.pictures;
 
   const [currentIndex, setCurrentIndex] = useState(0);
