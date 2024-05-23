@@ -1,0 +1,38 @@
+@use "../sass/variable_mixin/mixins.scss" as mixins;
+@use "../sass/variable_mixin/variables.scss" as variables;
+
+.slideshow {
+  position: relative;
+
+  .arrow {
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    top: 45%;
+  }
+
+  .arrow.left {
+    left: -10px;
+  }
+
+  .arrow.right {
+    right: -10px;
+  }
+
+  svg {
+    @media (max-width: 425px) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    height: 415px;
+    border-radius: 25px;
+    @media (max-width: 425px) {
+      height: 255px;
+    }
+  }
+}

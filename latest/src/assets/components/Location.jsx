@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import locations from "../../data.json";
 import Rating from '../components/StarRating.jsx';
+import Slideshow from "../components/Slideshow.jsx";
 
 const findIdLocation = (id) => {
   return locations.find((location) => location.id === id);
@@ -10,26 +11,13 @@ const findIdLocation = (id) => {
 const Location = () => {
   const { id } = useParams();
   const location = findIdLocation(id);
+
   if (!location) {
     return <Navigate to="*" />;
   }
-  const pictures = location.pictures;
 
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
   const [isEquipmentOpen, setIsEquipmentOpen] = useState(false);
-
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === pictures.length - 1 ? 0 : prevIndex + 1
-    );
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? pictures.length - 1 : prevIndex - 1
-    );
-  };
 
   const toggleDescription = () => {
     setIsDescriptionOpen(!isDescriptionOpen);
@@ -41,41 +29,7 @@ const Location = () => {
 
   return (
     <div className="location">
-      <div className="carrousel">
-        <button className="arrow left" onClick={prevSlide}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="80"
-            viewBox="0 0 48 80"
-            fill="none"
-          >
-            <path
-              d="M47.04 7.78312L39.92 0.703125L0.359985 40.3031L39.96 79.9031L47.04 72.8231L14.52 40.3031L47.04 7.78312Z"
-              fill="white"
-            />
-          </svg>
-        </button>
-        <img
-          src={pictures[currentIndex]}
-          alt={location.title}
-          key={currentIndex}
-        />
-        <button className="arrow right" onClick={nextSlide}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="48"
-            height="80"
-            viewBox="0 0 48 80"
-            fill="none"
-          >
-            <path
-              d="M0.960022 72.3458L8.04002 79.4258L47.64 39.8258L8.04002 0.22583L0.960022 7.30583L33.48 39.8258L0.960022 72.3458Z"
-              fill="white"
-            />
-          </svg>
-        </button>
-      </div>
+      <Slideshow pictures={location.pictures} />
 
       <div className="containerInfos">
         <div className="firstInfos">
