@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import banner2 from "../images/banner2.png";
-
+import PropTypes from 'prop-types';
 const Dropdown = ({ title, content }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -32,7 +32,10 @@ const Dropdown = ({ title, content }) => {
     </div>
   );
 };
-
+Dropdown.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
 const Dropdowns = () => {
   return (
     <div className="containerDropdowns">

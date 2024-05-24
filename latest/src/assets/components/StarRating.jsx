@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from 'prop-types';
 
 const Rating = ({ rating }) => {
   const maxStars = 5;
@@ -41,6 +41,11 @@ const Rating = ({ rating }) => {
   }
 
   return <div className="rating">{stars}</div>;
+};
+
+// Validation des props
+Rating.propTypes = {
+  rating: PropTypes.number.isRequired,
 };
 
 export default Rating;

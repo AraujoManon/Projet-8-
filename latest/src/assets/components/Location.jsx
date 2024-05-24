@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import locations from "../../data.json";
 import Rating from '../components/StarRating.jsx';
 import Slideshow from "../components/Slideshow.jsx";
+
 
 const findIdLocation = (id) => {
   return locations.find((location) => location.id === id);
@@ -12,12 +13,12 @@ const Location = () => {
   const { id } = useParams();
   const location = findIdLocation(id);
 
+  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
+  const [isEquipmentOpen, setIsEquipmentOpen] = useState(false);
+
   if (!location) {
     return <Navigate to="*" />;
   }
-
-  const [isDescriptionOpen, setIsDescriptionOpen] = useState(false);
-  const [isEquipmentOpen, setIsEquipmentOpen] = useState(false);
 
   const toggleDescription = () => {
     setIsDescriptionOpen(!isDescriptionOpen);

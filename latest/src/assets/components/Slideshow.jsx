@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Slideshow = ({ pictures }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -32,8 +33,8 @@ const Slideshow = ({ pictures }) => {
         </svg>
       </button>
       <img
-        src={pictures[currentIndex]}
-        alt={`Slide ${currentIndex + 1}`}
+        src={pictures[currentIndex].url} // Accédez à l'URL de l'image
+        alt={pictures[currentIndex].alt || `Slide ${currentIndex + 1}`} // Utilisez l'alt de l'image ou une alternative par défaut
         key={currentIndex}
       />
       <button className="arrow right" onClick={nextSlide}>
@@ -52,6 +53,15 @@ const Slideshow = ({ pictures }) => {
       </button>
     </div>
   );
+};
+
+Slideshow.propTypes = {
+  pictures: PropTypes.arrayOf(
+    PropTypes.shape({
+      url: PropTypes.string.isRequired,
+      alt: PropTypes.string
+    })
+  ).isRequired
 };
 
 export default Slideshow;
