@@ -1,9 +1,23 @@
 @use "../sass/variable_mixin/mixins.scss" as mixins;
 @use "../sass/variable_mixin/variables.scss" as variables;
 
-.dropdown {
-  width: 100%;
-
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 190px;
+  @media (max-width: 768px) {
+    margin: 0px 20px;
+  }
+  .containerDropdowns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
+  }
+  .dropdown {
+    width: 100%;
+  }
   .dropdownHeader {
     border-radius: 10px;
     display: flex;
@@ -17,7 +31,6 @@
     font-size: 18px;
     margin-bottom: 20px;
   }
-
   .dropdownHeader .arrow {
     transition: transform 0.3s ease;
   }

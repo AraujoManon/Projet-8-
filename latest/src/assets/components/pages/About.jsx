@@ -1,10 +1,13 @@
-import Dropdowns from "../Dropdowns";
+import React from "react";
+import Dropdowns from "../Dropdowns.jsx";
+
+
 const About = () => {
-    return (
-    <div className="drops">
-<Dropdowns />
-      </div>
-    );
-  };
-  
-  export default About;
+  return (
+    <div >
+      <Dropdowns />
+    </div>
+  );
+};
+
+export default About;

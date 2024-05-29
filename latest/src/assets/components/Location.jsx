@@ -1,10 +1,8 @@
-
 import { useParams, Navigate } from "react-router-dom";
 import locations from "../../data.json";
-import Rating from '../components/StarRating.jsx';
+import Rating from "../components/StarRating.jsx";
 import Slideshow from "../components/Slideshow.jsx";
 import Dropdown from "../components/Dropdown.jsx";
-
 
 const findIdLocation = (id) => {
   return locations.find((location) => location.id === id);
@@ -47,17 +45,14 @@ const Location = () => {
         </div>
       </div>
       <div className="dropdownContainer">
-        <Dropdown titre="Description" contenu={location.description} />
-        <Dropdown
-          titre="Équipements"
-          contenu={
-            <ul className="equipmentList">
-              {location.equipments.map((equipment, index) => (
-                <li key={index}>{equipment}</li>
-              ))}
-            </ul>
-          }
-        />
+        <Dropdown title="Description">{location.description}</Dropdown>
+        <Dropdown title="Équipements">
+          <ul className="equipmentList">
+            {location.equipments.map((equipment, index) => (
+              <li key={index}>{equipment}</li>
+            ))}
+          </ul>
+        </Dropdown>
       </div>
     </div>
   );
