@@ -5,47 +5,72 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px 190px;
+  margin: 0 190px;
+  flex-wrap: wrap;
+  align-content: center;
+
   @media (max-width: 768px) {
-    margin: 0px 20px;
-  }
-  .multipleDrop {
-  width: 100%;
-  }
-  .dropdown {
-    width: 100%;
-  }
-  .dropdownHeader {
-    border-radius: 10px;
-    display: flex;
-    max-width: 1023px;
-    padding: 10px 20px 10px 15px;
-    background: var(--Red, #ff6060);
-    justify-content: space-between;
-    align-items: center;
-    @include mixins.montserrat-style(700);
-    color: white;
-    font-size: 18px;
-    margin-bottom: 20px;
-  }
-  .dropdownHeader .arrow {
-    transition: transform 0.3s ease;
+    margin: 0 20px;
   }
 
-  .dropdownHeader .arrow.open {
-    transform: rotate(-180deg);
+  .multipleDrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 998px;
+  }
+
+  .dropdown {
+    width: 100%;
+    max-width: 998px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .dropdownHeader,
+  .dropdownContent {
+    width: 100%;
+    max-width: 998px;
+
+    @media (max-width: 768px) {
+      max-width: 300px;
+      margin: 0 20px;
+    }
+  }
+
+  .dropdownHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--Red, #ff6060);
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    @include mixins.montserrat-style(700);
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .arrow.open {
+      transform: rotate(-180deg);
+    }
   }
 
   .dropdownContent {
-    @include mixins.montserrat-style(400);
     padding: 20px;
-    border: none;
-    border-radius: 4px;
     background-color: #f9f9f9;
+    border-radius: 4px;
     margin-top: -20px;
     margin-bottom: 20px;
-    width: 1023px;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    @include mixins.montserrat-style(400);
   }
 }
