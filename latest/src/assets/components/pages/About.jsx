@@ -1,7 +1,7 @@
 import Dropdowns from "../Dropdowns";
 const About = () => {
     return (
-    <div>
+    <div className="drops">
 <Dropdowns />
       </div>
     );

@@ -1,0 +1,41 @@
+@use "../sass/variable_mixin/mixins.scss" as mixins;
+@use "../sass/variable_mixin/variables.scss" as variables;
+
+.dropdown {
+  width: 100%;
+
+  .dropdownHeader {
+    border-radius: 10px;
+    display: flex;
+    max-width: 1023px;
+    padding: 10px 20px 10px 15px;
+    background: var(--Red, #ff6060);
+    justify-content: space-between;
+    align-items: center;
+    @include mixins.montserrat-style(700);
+    color: white;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .dropdownHeader .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .dropdownHeader .arrow.open {
+    transform: rotate(-180deg);
+  }
+
+  .dropdownContent {
+    @include mixins.montserrat-style(400);
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    width: 1023px;
+    display: flex;
+    align-items: center;
+  }
+}

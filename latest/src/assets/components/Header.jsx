@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import logoKaza from "../images/LOGO.png";
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
     <img className="logoKaza" src={logoKaza} alt="Logo Kasa" />
     <nav className="nav">
       <NavLink to="/" className={({ isActive }) => (isActive ? "underline" : "")}>
@@ -12,7 +12,7 @@ const Header = () => {
         <p>A Propos</p>
       </NavLink>
     </nav>
-  </div>
+  </header>
   );
 };
 export default Header;

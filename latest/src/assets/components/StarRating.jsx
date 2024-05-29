@@ -43,7 +43,6 @@ const Rating = ({ rating }) => {
   return <div className="rating">{stars}</div>;
 };
 
-// Validation des props
 Rating.propTypes = {
   rating: PropTypes.number.isRequired,
 };
