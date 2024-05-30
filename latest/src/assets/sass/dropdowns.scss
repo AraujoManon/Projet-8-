@@ -22,17 +22,21 @@
   }
 
   .dropdown {
-    width: 100%;
+    max-width: 983px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    @media (max-width: 768px) {
+      max-width: 400px;
+    }
+    @media (max-width: 475px) {
+      max-width: 295px;
+    }
   }
 
   .dropdownHeader,
   .dropdownContent {
     width: 100%;
-
-   
   }
 
   .dropdownHeader {
@@ -46,17 +50,15 @@
     border-radius: 10px;
     margin-bottom: 20px;
     @include mixins.montserrat-style(700);
-    max-width: 983px; 
+    max-width: 983px;
+
     @media (max-width: 768px) {
       max-width: 400px;
-      
     }
     @media (max-width: 475px) {
       max-width: 295px;
-     
     }
 
-  
     .arrow {
       transition: transform 0.3s ease;
     }
