@@ -16,7 +16,7 @@ const Slideshow = ({ pictures }) => {
   };
 
   return (
-    <div className="slideshow">
+    <section className="slideshow">
       {pictures.length > 1 && (
         <button className="arrow left" onClick={prevSlide}>
           <svg
@@ -54,7 +54,7 @@ const Slideshow = ({ pictures }) => {
           </svg>
         </button>
       )}
-    </div>
+    </section>
   );
 };
 

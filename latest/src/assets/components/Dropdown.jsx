@@ -10,7 +10,7 @@ const Dropdown = ({ title, children }) => {
   };
 
   return (
-    <div className="dropdown">
+    <section className="dropdown">
       <div className="dropdownHeader" onClick={toggleDropdown}>
         <span>{title}</span>
         <svg
@@ -28,7 +28,7 @@ const Dropdown = ({ title, children }) => {
         </svg>
       </div>
       {isOpen && <div className="dropdownContent">{children}</div>}
-    </div>
+    </section>
   );
 };
 

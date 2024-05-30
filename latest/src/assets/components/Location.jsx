@@ -17,10 +17,10 @@ const Location = () => {
   }
 
   return (
-    <div className="location">
+    <section className="location">
       <Slideshow pictures={location.pictures} />
 
-      <div className="containerInfos">
+      <article className="containerInfos">
         <div className="firstInfos">
           <h2>{location.title}</h2>
           <p>{location.location}</p>
@@ -43,8 +43,8 @@ const Location = () => {
           </div>
           <Rating rating={parseInt(location.rating)} />
         </div>
-      </div>
-      <div className="dropdownContainer">
+      </article>
+      <article className="dropdownContainer">
         <Dropdown title="Description">{location.description}</Dropdown>
         <Dropdown title="Équipements">
           <ul className="equipmentList">
@@ -53,8 +53,8 @@ const Location = () => {
             ))}
           </ul>
         </Dropdown>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 

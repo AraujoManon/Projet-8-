@@ -3,11 +3,11 @@ import Dropdown from "../components/Dropdown.jsx";
 
 const Dropdowns = () => {
   return (
-    <div className="containerDropdowns">
-      <div className="banner2">
+    <section className="containerDropdowns">
+      <article className="banner2">
         <img className="img2" src={banner2} alt="Seconde bannière" />
-      </div>
-      <div className="multipleDrop">
+      </article>
+      <article className="multipleDrop">
         <Dropdown title="Fiabilité">
           Les annonces postées sur Kasa garantissent une fiabilité totale. Les
           photos sont conformes aux logements, et toutes les informations sont
@@ -31,8 +31,8 @@ const Dropdowns = () => {
           standards sont bien respectés. Nous organisons également des ateliers
           sur la sécurité domestique pour nos hôtes.
         </Dropdown>
-      </div>
-    </div>
+      </article>
+    </section>
   );
 };
 
