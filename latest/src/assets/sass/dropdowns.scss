@@ -1,0 +1,82 @@
+@use "../sass/variable_mixin/mixins.scss" as mixins;
+@use "../sass/variable_mixin/variables.scss" as variables;
+
+.containerDropdowns {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 100px;
+  flex-wrap: wrap;
+  align-content: center;
+
+  @media (max-width: 768px) {
+    margin: 0 20px;
+  }
+
+  .multipleDrop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dropdown {
+    max-width: 983px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: 768px) {
+      max-width: 400px;
+    }
+    @media (max-width: 475px) {
+      max-width: 295px;
+    }
+  }
+
+  .dropdownHeader,
+  .dropdownContent {
+    width: 100%;
+  }
+
+  .dropdownHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: var(--Red, #ff6060);
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    @include mixins.montserrat-style(700);
+    max-width: 983px;
+
+    @media (max-width: 768px) {
+      max-width: 400px;
+    }
+    @media (max-width: 475px) {
+      max-width: 295px;
+    }
+
+    .arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .arrow.open {
+      transform: rotate(-180deg);
+    }
+  }
+
+  .dropdownContent {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include mixins.montserrat-style(400);
+  }
+}

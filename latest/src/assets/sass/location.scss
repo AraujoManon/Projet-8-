@@ -1,0 +1,177 @@
+@use "../sass/variable_mixin/mixins.scss" as mixins;
+@use "../sass/variable_mixin/variables.scss" as variables;
+
+.location {
+  margin: 0px 100px;
+  @media (max-width: 1024px) {
+    margin: 0px 20px;
+  }
+
+  .containerInfos {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+  }
+
+  .firstInfos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  h2 {
+    @include mixins.montserrat-style(500);
+    color: variables.$saumon;
+    font-size: 36px;
+    margin: 30px 0px 0px 0px;
+    @media (max-width: 1024px) {
+      margin-top: 15px;
+    }
+    @media (max-width: 425px) {
+      font-size: 18px;
+    }
+  }
+
+  p {
+    @include mixins.montserrat-style(500);
+    font-size: 18px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    line-height: 142.6%;
+    @media (max-width: 1024px) {
+      margin-bottom: 10px;
+    }
+    @media (max-width: 425px) {
+      font-size: 14px;
+    }
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 24px;
+    @media (max-width: 1024px) {
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+  }
+
+  button {
+    padding: 3px 30px;
+    height: 25px;
+    background: variables.$saumon;
+    min-width: 115px;
+    @include mixins.montserrat-style(700);
+    font-size: 14px;
+    border-radius: 10px;
+    border: 0px solid;
+    color: white;
+    @media (max-width: 1024px) {
+      font-size: 10px;
+      min-width: 84px;
+    }
+  }
+
+  .secondInfos {
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 1024px) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  .host {
+    flex-direction: row;
+    display: flex;
+    margin: 24px 0px 21px 0px;
+    align-items: center;
+    @media (max-width: 1024px) {
+      margin-bottom: 13px;
+      gap: 10px;
+      margin-top: 0px;
+    }
+  }
+
+  h3 {
+    @include mixins.montserrat-style(700);
+    color: variables.$saumon;
+    width: 93px;
+    margin: 0px;
+    @media (max-width: 1024px) {
+      font-size: 12px;
+      justify-content: flex-end;
+      display: flex;
+    }
+  }
+
+  .pictureHost {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+  }
+
+  .dropdownContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 76px;
+    justify-content: space-between;
+    @media (max-width: 1024px) {
+      margin-bottom: -23px;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 27px;
+    }
+  }
+
+  .dropdown {
+    width: 582px;
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
+  }
+
+  .dropdownHeader {
+    border-radius: 10px;
+    display: flex;
+    padding: 10px 20px 10px 10px;
+    background: variables.$saumon;
+    justify-content: space-between;
+    align-items: center;
+    @include mixins.montserrat-style(700);
+    color: white;
+    font-size: 18px;
+    @media (max-width: 425px) {
+      font-size: 13px;
+    }
+  }
+
+  .dropdownHeader .arrow {
+    transition: transform 0.3s ease;
+  }
+
+  .dropdownHeader .arrow.open {
+    transform: rotate(-180deg);
+  }
+
+  .dropdownContent {
+    @include mixins.montserrat-style(400);
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+
+  .equipmentList {
+    padding: 0px;
+    list-style-type: none;
+    margin: 0px;
+  }
+}
